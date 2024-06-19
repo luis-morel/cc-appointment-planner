@@ -1,13 +1,16 @@
 import React from "react";
+import Tile from '../tile/Tile.js';
 
 export const TileList = ({ data }) => {
   return (
     <div>
-      {data.map((item) => {
+      {data.map((item, i) => {
+        const { name, ...description} = item;
         return (
           <Tile
-            name={item.name}
-            description={item.description}
+            key={i}
+            name={name}
+            description={description}
           />
         )
       })}            
