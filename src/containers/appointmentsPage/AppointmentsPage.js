@@ -28,7 +28,7 @@ export const AppointmentsPage = ({ appointments, contacts, handleNewAppointment 
     handleNewAppointment(newAppointment);
 
     setName(prevName => '');
-    setContact(prevContact => {});4
+    setContact(prevContact => {});
     setDate(prevDate => '');
     setTime(prevTime => '');
   };
