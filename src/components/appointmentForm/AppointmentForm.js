@@ -27,20 +27,26 @@ export const AppointmentForm = (props) => {
       <input
         name="name"
         value={name}
+        onChange={(e) => setName(prevName => e.target.value)}
         type="text"
       />
       <input
         name="date"
         value={date}
+        onChange={(e) => setDate(prevDate = e.target.value)}
         min={getTodayString()}
         type="date"
       />
       <input
         name="time"
         value={time}
+        onChange={(e) => setTime(prevTime => e.target.value)}
         type="time"
       />
-      <ContactPicker contacts={contacts}/>
+      <ContactPicker
+        contacts={contacts}
+        onChange={(e) => setContact(prevContact => e.target.value)}
+      />
       <input type="submit" />
     </form>
   );
