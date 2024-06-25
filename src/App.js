@@ -35,6 +35,7 @@ function App() {
       <Route path={ROUTES.APPOINTMENTS} element={
         <AppointmentsPage 
           appointments={appointments}
+          contacts={contacts}
           handleNewAppointment={handleNewAppointment}
         /> /* Add props to AppointmentsPage */
       }/>

@@ -43,6 +43,8 @@ export const ContactsPage = ({ contacts, handleNewContact }) => {
     const duplicateContact = contacts.find((contact) => contact.name === name);
     if (duplicateContact !== undefined) {
       setDuplicate(prevDuplicate => true);
+    } else {
+      setDuplicate(prevDuplicate => false);
     };
   }, [name]);
 
@@ -53,6 +55,7 @@ export const ContactsPage = ({ contacts, handleNewContact }) => {
         <ContactForm 
           email={email}
           name={name}
+          duplicate={duplicate}
           phone={phone}
           setEmail={setEmail}
           setName={setName}
@@ -63,7 +66,7 @@ export const ContactsPage = ({ contacts, handleNewContact }) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList contacts={contacts} />
+        <TileList data={contacts} />
       </section>
     </div>
   );

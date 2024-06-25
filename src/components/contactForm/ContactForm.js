@@ -1,7 +1,9 @@
 import React from "react";
+import './ContactForm.css';
 
 export const ContactForm = ({
   name,
+  duplicate,
   setName,
   phone,
   setPhone,
@@ -18,6 +20,7 @@ export const ContactForm = ({
         placeholder="Name"
         onChange={(e) => setName(prevName => e.target.value)}
       />
+      {duplicate === true ? <p id='duplicateName'>Duplicate name</p> : ""}
       <input 
         type="email"
         value={email}
@@ -28,9 +31,10 @@ export const ContactForm = ({
         type="tel"
         value={phone}
         placeholder="Phone"
-        pattern="/[1-9]-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        pattern="[1-9]-[0-9]{3}-[0-9]{3}-[0-9]{4}"
         onChange={(e) => setPhone(prevPhone => e.target.value)}
       />
+      <input type="submit" value="Submit" />
     </form>
   );
 };

@@ -9,7 +9,7 @@ export const AppointmentsPage = ({ appointments, contacts, handleNewAppointment 
   appointment info
   */
   const [ name, setName ] = useState('');
-  const [ contact, setContact ] = useState({});
+  const [ contact, setContact ] = useState('');
   const [ date, setDate ] = useState('');
   const [ time, setTime ] = useState('');
 
@@ -39,10 +39,10 @@ export const AppointmentsPage = ({ appointments, contacts, handleNewAppointment 
         <h2>Add Appointment</h2>
         <AppointmentForm
           contact={contact}
-          contacts={contacts}
           date={date}
           name={name}
           time={time}
+          contacts={contacts}
           setContact={setContact}
           setDate={setDate}
           setName={setName}
@@ -54,7 +54,7 @@ export const AppointmentsPage = ({ appointments, contacts, handleNewAppointment 
       <section>
         <h2>Appointments</h2>
         <TileList
-          appointments={appointments}
+          data={appointments}
         />
       </section>
     </div>
